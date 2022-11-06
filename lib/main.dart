@@ -1,3 +1,4 @@
+import 'package:cbpeniel/tema.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,34 +13,7 @@ class MyPage extends StatefulWidget {
 }
 
 class _MyPageState extends State<MyPage> {
-  ThemeData branco = ThemeData(
-    colorScheme: ThemeData.light().colorScheme.copyWith(
-          primary: Colors.yellow,
-          secondary: Colors.white,
-          tertiary: Colors.black,
-        ),
-    textTheme: ThemeData.light().textTheme.copyWith(
-        // Thema do Valor
-        headline1: const TextStyle(
-          fontFamily: 'OpenSans',
-          fontSize: 20,
-          // fontWeight: FontWeight.bold,
-          color: Colors.white,
-        ),
-        // Thema do Título da lista
-        headline3: const TextStyle(
-          fontFamily: 'OpenSans',
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-          color: Colors.black,
-        ),
-        // Thema do subtítulo da lista
-        headline4: const TextStyle(
-          fontFamily: 'OpenSans',
-          fontSize: 13,
-          color: Colors.grey,
-        )),
-  );
+  ThemeData branco = Tema().branco;
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +32,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final _listaImagem = [
+    {'id': 0, 'imagem': 'assents\\imagem\\papel.png'},
+    {'id': 0, 'imagem': 'assents\\imagem\\papel.png'}
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,9 +46,18 @@ class _MyHomePageState extends State<MyHomePage> {
           icon: const Icon(Icons.menu),
           color: Theme.of(context).colorScheme.secondary,
         ),
-        title: Text(
-          "Comunidade Bíblica Peniel",
-          style: Theme.of(context).textTheme.headline1,
+        title: Row(
+          children: [
+            SizedBox(
+              width: 30,
+              child:
+                  Image.asset('assents\\imagem\\logo.png', fit: BoxFit.cover),
+            ),
+            Text(
+              "Comunidade Bíblica Peniel",
+              style: Theme.of(context).textTheme.headline1,
+            ),
+          ],
         ),
         centerTitle: true,
         backgroundColor: Theme.of(context).colorScheme.tertiary,
@@ -80,13 +68,93 @@ class _MyHomePageState extends State<MyHomePage> {
         actionsIconTheme: IconThemeData(
             color: Theme.of(context).colorScheme.secondary, size: 23),
       ),
-      body: SizedBox(
-          height: 120,
-          width: 1080,
-          child: Image.asset(
-            'assents\\imagem\\papel.png',
-            fit: BoxFit.cover,
+      bottomNavigationBar: BottomAppBar(
+          color: Theme.of(context).colorScheme.tertiary,
+          elevation: 15,
+          // shape: BoxShap,
+          child: IconTheme(
+            data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    IconButton(
+                      iconSize: 25,
+                      color: Theme.of(context).colorScheme.secondary,
+                      tooltip: 'Open navigation menu',
+                      icon: const Icon(Icons.home),
+                      onPressed: () {},
+                      alignment: AlignmentDirectional.bottomCenter,
+                    ),
+                    Text('Inicio')
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    IconButton(
+                      iconSize: 25,
+                      color: Theme.of(context).colorScheme.secondary,
+                      tooltip: 'Open navigation menu',
+                      icon: const Icon(Icons.home),
+                      onPressed: () {},
+                      alignment: AlignmentDirectional.bottomCenter,
+                    ),
+                    Text('Inicio')
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    IconButton(
+                      iconSize: 25,
+                      color: Theme.of(context).colorScheme.secondary,
+                      tooltip: 'Open navigation menu',
+                      icon: const Icon(Icons.home),
+                      onPressed: () {},
+                      alignment: AlignmentDirectional.bottomCenter,
+                    ),
+                    Text('Inicio')
+                  ],
+                ),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    IconButton(
+                      // iconSize: 25,
+                      color: Theme.of(context).colorScheme.secondary,
+                      tooltip: 'Open navigation menu',
+                      icon: const Icon(Icons.account_balance_sharp),
+                      onPressed: () {},
+                      alignment: AlignmentDirectional.bottomCenter,
+                    ),
+                    Text('Inicio')
+                  ],
+                ),
+              ],
+            ),
           )),
+      body: Column(
+        children: <Widget>[
+          const SizedBox(height: 15),
+          SafeArea(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Image.asset(
+                  'assents\\imagem\\papel.png',
+                  fit: BoxFit.cover,
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
