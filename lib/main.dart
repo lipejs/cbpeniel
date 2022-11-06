@@ -1,5 +1,13 @@
-import 'package:cbpeniel/tema.dart';
+import 'package:cbpeniel/componentes/Navegacao.dart';
+import 'package:cbpeniel/componentes/menu.dart';
+import 'package:cbpeniel/paginas/biblia.dart';
+import 'package:cbpeniel/paginas/galeria.dart';
+import 'package:cbpeniel/paginas/home.dart';
+import 'package:cbpeniel/paginas/youtube.dart';
 import 'package:flutter/material.dart';
+
+import 'componentes/tema.dart';
+import 'paginas/agenda.dart';
 
 void main() {
   runApp(const MyPage());
@@ -13,7 +21,7 @@ class MyPage extends StatefulWidget {
 }
 
 class _MyPageState extends State<MyPage> {
-  ThemeData branco = Tema().branco;
+  final ThemeData branco = Tema().branco;
 
   @override
   Widget build(BuildContext context) {
@@ -32,127 +40,46 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _listaImagem = [
-    {'id': 0, 'imagem': 'assents\\imagem\\papel.png'},
-    {'id': 0, 'imagem': 'assents\\imagem\\papel.png'}
-  ];
+  late int _paginaAtual = 0;
+  late PageController pc;
+
+  @override
+  void initState() {
+    super.initState();
+    pc = PageController(initialPage: _paginaAtual);
+  }
+
+  setPaginaAtual(pagina) {
+    setState(() {
+      _paginaAtual = pagina;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.menu),
-          color: Theme.of(context).colorScheme.secondary,
-        ),
-        title: Row(
-          children: [
-            SizedBox(
-              width: 30,
-              child:
-                  Image.asset('assents\\imagem\\logo.png', fit: BoxFit.cover),
-            ),
-            Text(
-              "Comunidade Bíblica Peniel",
-              style: Theme.of(context).textTheme.headline1,
-            ),
-          ],
-        ),
+        leading: Menu(context: context).leading(),
+        title: Menu(context: context).title(),
         centerTitle: true,
         backgroundColor: Theme.of(context).colorScheme.tertiary,
-        actions: <Widget>[
-          IconButton(
-              onPressed: () {}, icon: const Icon(Icons.circle_notifications))
-        ],
+        actions: Menu(context: context).actions(),
         actionsIconTheme: IconThemeData(
             color: Theme.of(context).colorScheme.secondary, size: 23),
       ),
-      bottomNavigationBar: BottomAppBar(
-          color: Theme.of(context).colorScheme.tertiary,
-          elevation: 15,
-          // shape: BoxShap,
-          child: IconTheme(
-            data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      iconSize: 25,
-                      color: Theme.of(context).colorScheme.secondary,
-                      tooltip: 'Open navigation menu',
-                      icon: const Icon(Icons.home),
-                      onPressed: () {},
-                      alignment: AlignmentDirectional.bottomCenter,
-                    ),
-                    Text('Inicio')
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      iconSize: 25,
-                      color: Theme.of(context).colorScheme.secondary,
-                      tooltip: 'Open navigation menu',
-                      icon: const Icon(Icons.home),
-                      onPressed: () {},
-                      alignment: AlignmentDirectional.bottomCenter,
-                    ),
-                    Text('Inicio')
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      iconSize: 25,
-                      color: Theme.of(context).colorScheme.secondary,
-                      tooltip: 'Open navigation menu',
-                      icon: const Icon(Icons.home),
-                      onPressed: () {},
-                      alignment: AlignmentDirectional.bottomCenter,
-                    ),
-                    Text('Inicio')
-                  ],
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      // iconSize: 25,
-                      color: Theme.of(context).colorScheme.secondary,
-                      tooltip: 'Open navigation menu',
-                      icon: const Icon(Icons.account_balance_sharp),
-                      onPressed: () {},
-                      alignment: AlignmentDirectional.bottomCenter,
-                    ),
-                    Text('Inicio')
-                  ],
-                ),
-              ],
-            ),
-          )),
-      body: Column(
-        children: <Widget>[
-          const SizedBox(height: 15),
-          SafeArea(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                Image.asset(
-                  'assents\\imagem\\papel.png',
-                  fit: BoxFit.cover,
-                ),
-              ],
-            ),
-          )
+      bottomNavigationBar: Navegacao(
+        paginaAtual: _paginaAtual,
+        pageController: pc,
+      ),
+      body: PageView(
+        onPageChanged: setPaginaAtual,
+        controller: pc,
+        children: const [
+          Home(),
+          Biblia(),
+          Youtube(),
+          Galeria(),
+          Agenda(),
         ],
       ),
     );
