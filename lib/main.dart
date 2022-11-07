@@ -55,12 +55,19 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  atualizar() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Menu(context: context).leading(),
-        title: Menu(context: context).title(),
+        iconTheme:
+            IconThemeData(color: Theme.of(context).colorScheme.secondary),
+        title: Menu(
+          context: context,
+        ).title(),
         centerTitle: true,
         backgroundColor: Theme.of(context).colorScheme.tertiary,
         actions: Menu(context: context).actions(),
@@ -71,6 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
         paginaAtual: _paginaAtual,
         pageController: pc,
       ),
+      drawer: Menu(context: context).drawer(),
       body: PageView(
         onPageChanged: setPaginaAtual,
         controller: pc,

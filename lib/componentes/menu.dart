@@ -5,19 +5,6 @@ class Menu extends StatelessWidget {
 
   final BuildContext context;
 
-  leading() {
-    return IconButton(
-      onPressed: () {
-        const Drawer(
-          backgroundColor: Colors.black,
-          child: Text('t'),
-        );
-      },
-      icon: const Icon(Icons.menu),
-      color: Theme.of(context).colorScheme.secondary,
-    );
-  }
-
   title() {
     return Row(
       children: [
@@ -30,6 +17,14 @@ class Menu extends StatelessWidget {
           style: Theme.of(context).textTheme.headline1,
         ),
       ],
+    );
+  }
+
+  drawer() {
+    return const Drawer(
+      width: 275,
+      backgroundColor: Colors.white,
+      elevation: 5,
     );
   }
 

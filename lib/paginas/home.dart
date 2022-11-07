@@ -17,13 +17,43 @@ class Home extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      width: 35,
+                      child: Image.asset(
+                        'lib\\imagem\\logo.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    const Text('Seja Bem Vindo!',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'OpenSans',
+                        )),
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const Text('Videos',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: 'OpenSans',
+                      )),
+                ],
+              ),
               Image.asset(
                 'lib\\imagem\\papel.png',
                 fit: BoxFit.cover,
-              ),
+              )
             ],
           ),
-        )
+        ),
       ],
     );
   }
