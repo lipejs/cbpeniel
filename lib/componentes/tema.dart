@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Tema {
   ThemeData get branco {
     return ThemeData(
-      drawerTheme: DrawerThemeData(
+      drawerTheme: const DrawerThemeData(
         backgroundColor: Colors.black,
       ),
       primaryColorLight: const Color.fromARGB(255, 241, 241, 241),
@@ -24,13 +24,13 @@ class Tema {
             headline3: const TextStyle(
               fontFamily: 'OpenSans',
               fontSize: 18,
-              fontWeight: FontWeight.bold,
+              // fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
             // Thema do subtítulo da lista
             headline4: const TextStyle(
               fontFamily: 'OpenSans',
-              fontSize: 13,
+              fontSize: 18,
               color: Colors.grey,
             ),
           ),
