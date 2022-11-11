@@ -80,29 +80,22 @@ class Biblia extends StatelessWidget {
       appBar: AppBar(
         iconTheme:
             IconThemeData(color: Theme.of(context).colorScheme.secondary),
-        backgroundColor: Theme.of(context).colorScheme.tertiary,
         title: Row(children: [
-          ElevatedButton(onPressed: () {}, child: Icon(Icons.abc)),
-          Text('Bíblia')
+          TextButton(
+              onPressed: () {},
+              child: const Icon(
+                Icons.navigate_before,
+                color: Colors.grey,
+              )),
+          Text(
+            'Bíblia',
+            style: Theme.of(context).textTheme.headline3,
+          )
         ]),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // SizedBox(
-            //   width: double.infinity,
-            //   height: 50,
-            //   child: Row(
-            //     crossAxisAlignment: CrossAxisAlignment.center,
-            //     mainAxisAlignment: MainAxisAlignment.center,
-            //     children: [
-            //       Text(
-            //         'BIBLIA',
-            //         style: Theme.of(context).textTheme.headline3,
-            //       ),
-            //     ],
-            //   ),
-            // ),
             Container(
               height: 0.5,
               width: double.infinity,
@@ -122,9 +115,9 @@ class Biblia extends StatelessWidget {
                     onPressed: () {},
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
-                          Theme.of(context).colorScheme.secondary),
-                      foregroundColor: MaterialStateProperty.all(
                           Theme.of(context).colorScheme.tertiary),
+                      foregroundColor: MaterialStateProperty.all(
+                          Theme.of(context).colorScheme.secondary),
                       shape: MaterialStateProperty.all(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0),

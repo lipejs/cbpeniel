@@ -18,10 +18,10 @@ class Tema {
             ),
             // Thema do Título da lista
             headline3: const TextStyle(
-              fontFamily: 'OpenSans',
-              fontSize: 18,
-              // fontWeight: FontWeight.bold,
-              color: Colors.white,
+              fontFamily: 'Poppins',
+              fontSize: 17,
+              fontWeight: FontWeight.bold,
+              color: Color.fromARGB(255, 216, 216, 216),
             ),
             // Thema do subtítulo da lista
             headline4: const TextStyle(

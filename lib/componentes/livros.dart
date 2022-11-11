@@ -16,7 +16,7 @@ class Livros extends StatelessWidget {
             child: ElevatedButton(
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
-                      Theme.of(context).colorScheme.tertiary),
+                      Theme.of(context).colorScheme.primary),
                   overlayColor: MaterialStateProperty.all(Colors.grey[100])),
               onPressed: () {
                 print(lv['nome']);
