@@ -14,34 +14,30 @@ class Navegacao extends StatelessWidget {
     return BottomNavigationBar(
       currentIndex: paginaAtual,
       elevation: 10,
-      backgroundColor: Theme.of(context).colorScheme.tertiary,
-      fixedColor: Theme.of(context).colorScheme.secondary,
+      backgroundColor: Theme.of(context).colorScheme.background,
+      fixedColor: const Color.fromARGB(255, 255, 145, 0),
+      unselectedItemColor: Colors.white,
       type: BottomNavigationBarType.fixed,
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label: 'Inicial',
-          backgroundColor: Colors.grey,
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.book),
           label: 'Biblía',
-          backgroundColor: Colors.grey,
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.smart_display_sharp),
           label: 'YouTube',
-          backgroundColor: Colors.grey,
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.photo),
           label: 'Galeria',
-          backgroundColor: Colors.grey,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.view_agenda),
-          label: 'Agenda',
-          backgroundColor: Colors.grey,
+          icon: Icon(Icons.menu),
+          label: 'Menu',
         ),
       ],
       onTap: (pagina) {

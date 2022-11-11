@@ -1,6 +1,8 @@
 import 'package:cbpeniel/componentes/livros.dart';
 import 'package:flutter/material.dart';
 
+import '../componentes/menu.dart';
+
 final List<Map> livros = [
   {'sigla': 'Gn', 'nome': 'Genêsis'},
   {'sigla': 'Êx', 'nome': 'Êxodo'},
@@ -74,58 +76,69 @@ class Biblia extends StatelessWidget {
   const Biblia({super.key});
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          SizedBox(
-            width: double.infinity,
-            height: 50,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'BIBLIA',
-                  style: Theme.of(context).textTheme.headline3,
-                ),
-              ],
+    return Scaffold(
+      appBar: AppBar(
+        iconTheme:
+            IconThemeData(color: Theme.of(context).colorScheme.secondary),
+        backgroundColor: Theme.of(context).colorScheme.tertiary,
+        title: Row(children: [
+          ElevatedButton(onPressed: () {}, child: Icon(Icons.abc)),
+          Text('Bíblia')
+        ]),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            // SizedBox(
+            //   width: double.infinity,
+            //   height: 50,
+            //   child: Row(
+            //     crossAxisAlignment: CrossAxisAlignment.center,
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     children: [
+            //       Text(
+            //         'BIBLIA',
+            //         style: Theme.of(context).textTheme.headline3,
+            //       ),
+            //     ],
+            //   ),
+            // ),
+            Container(
+              height: 0.5,
+              width: double.infinity,
+              color: Colors.grey,
             ),
-          ),
-          Container(
-            height: 0.5,
-            width: double.infinity,
-            color: Colors.grey,
-          ),
-          SizedBox(
-            width: 350,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Livros',
-                  style: Theme.of(context).textTheme.headline4,
-                ),
-                OutlinedButton(
-                  autofocus: true,
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                        Theme.of(context).colorScheme.secondary),
-                    foregroundColor: MaterialStateProperty.all(
-                        Theme.of(context).colorScheme.tertiary),
-                    shape: MaterialStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25.0),
+            SizedBox(
+              width: 350,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Livros',
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                  OutlinedButton(
+                    autofocus: true,
+                    onPressed: () {},
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                          Theme.of(context).colorScheme.secondary),
+                      foregroundColor: MaterialStateProperty.all(
+                          Theme.of(context).colorScheme.tertiary),
+                      shape: MaterialStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
                       ),
                     ),
-                  ),
-                  child: const Text('NVI'),
-                )
-              ],
+                    child: const Text('NVI'),
+                  )
+                ],
+              ),
             ),
-          ),
-          Livros(livros: livros),
-        ],
+            Livros(livros: livros),
+          ],
+        ),
       ),
     );
   }

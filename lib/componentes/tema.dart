@@ -1,31 +1,27 @@
 import 'package:flutter/material.dart';
 
 class Tema {
-  ThemeData get branco {
+  ThemeData get theme {
     return ThemeData(
-      drawerTheme: const DrawerThemeData(
-        backgroundColor: Colors.black,
-      ),
-      primaryColorLight: const Color.fromARGB(255, 241, 241, 241),
-      colorScheme: ThemeData.light().colorScheme.copyWith(
-            primary: Colors.yellow,
-            secondary: Colors.black,
-            tertiary: Colors.white,
+      colorScheme: ThemeData.dark().colorScheme.copyWith(
+            primary: Colors.red,
+            secondary: Colors.white,
+            tertiary: Colors.black,
           ),
-      textTheme: ThemeData.light().textTheme.copyWith(
+      textTheme: ThemeData.dark().textTheme.copyWith(
             // Thema do Valor
             headline1: const TextStyle(
-              fontFamily: 'OpenSans',
-              fontSize: 20,
+              // fontFamily: '',
+              fontSize: 17,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: Colors.white,
             ),
             // Thema do Título da lista
             headline3: const TextStyle(
               fontFamily: 'OpenSans',
               fontSize: 18,
               // fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: Colors.white,
             ),
             // Thema do subtítulo da lista
             headline4: const TextStyle(

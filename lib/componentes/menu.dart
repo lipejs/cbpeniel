@@ -7,6 +7,7 @@ class Menu extends StatelessWidget {
 
   title() {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         SizedBox(
           width: 30,
@@ -16,15 +17,9 @@ class Menu extends StatelessWidget {
           "Comunidade Bíblica Peniel",
           style: Theme.of(context).textTheme.headline1,
         ),
+        IconButton(
+            onPressed: () {}, icon: const Icon(Icons.account_circle_rounded)),
       ],
-    );
-  }
-
-  drawer() {
-    return const Drawer(
-      width: 275,
-      backgroundColor: Colors.white,
-      elevation: 5,
     );
   }
 

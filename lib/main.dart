@@ -1,5 +1,4 @@
 import 'package:cbpeniel/componentes/Navegacao.dart';
-import 'package:cbpeniel/componentes/menu.dart';
 import 'package:cbpeniel/paginas/biblia.dart';
 import 'package:cbpeniel/paginas/galeria.dart';
 import 'package:cbpeniel/paginas/home.dart';
@@ -21,12 +20,12 @@ class MyPage extends StatefulWidget {
 }
 
 class _MyPageState extends State<MyPage> {
-  final ThemeData branco = Tema().branco;
+  final ThemeData theme = Tema().theme;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: branco,
+      theme: theme,
       home: const MyHomePage(),
     );
   }
@@ -62,23 +61,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        iconTheme:
-            IconThemeData(color: Theme.of(context).colorScheme.secondary),
-        title: Menu(
-          context: context,
-        ).title(),
-        centerTitle: true,
-        backgroundColor: Theme.of(context).colorScheme.tertiary,
-        actions: Menu(context: context).actions(),
-        actionsIconTheme: IconThemeData(
-            color: Theme.of(context).colorScheme.secondary, size: 23),
-      ),
       bottomNavigationBar: Navegacao(
         paginaAtual: _paginaAtual,
         pageController: pc,
       ),
-      drawer: Menu(context: context).drawer(),
       body: PageView(
         onPageChanged: setPaginaAtual,
         controller: pc,
