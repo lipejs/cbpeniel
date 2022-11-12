@@ -12,12 +12,21 @@ class Livros extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: livros.map(
         (lv) {
-          return Card(
+          return Container(
+            // width: double.infinity,
+            // height: 100,
+            margin: EdgeInsets.symmetric(vertical: 3, horizontal: 10),
             child: ElevatedButton(
               style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      Theme.of(context).colorScheme.primary),
-                  overlayColor: MaterialStateProperty.all(Colors.grey[100])),
+                backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                overlayColor: MaterialStateProperty.all(Colors.grey[100]),
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25.0),
+                    side: const BorderSide(width: 2.0, color: Colors.white30),
+                  ),
+                ),
+              ),
               onPressed: () {
                 print(lv['nome']);
               },
@@ -32,7 +41,7 @@ class Livros extends StatelessWidget {
                           vertical: 10,
                         ),
                         decoration: BoxDecoration(
-                            color: Colors.black,
+                            color: Color.fromARGB(198, 255, 145, 0),
                             borderRadius: BorderRadius.circular(15)),
                         width: 45,
                         height: 45,
@@ -51,7 +60,7 @@ class Livros extends StatelessWidget {
                             fontFamily: 'OpenSans',
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
-                            color: Colors.black),
+                            color: Colors.white),
                         textAlign: TextAlign.justify,
                       ),
                     ],
@@ -59,7 +68,7 @@ class Livros extends StatelessWidget {
                   IconButton(
                     onPressed: () {},
                     icon: Icon(Icons.arrow_circle_right_outlined),
-                    color: Colors.black,
+                    color: Colors.white,
                   )
                 ],
               ),

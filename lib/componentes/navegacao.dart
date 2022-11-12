@@ -43,7 +43,7 @@ class Navegacao extends StatelessWidget {
       onTap: (pagina) {
         pageController.animateToPage(
           pagina,
-          duration: const Duration(milliseconds: 400),
+          duration: const Duration(milliseconds: 1),
           curve: Curves.ease,
         );
       },

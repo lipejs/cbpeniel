@@ -66,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
         pageController: pc,
       ),
       body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
         onPageChanged: setPaginaAtual,
         controller: pc,
         children: const [

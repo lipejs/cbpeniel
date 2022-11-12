@@ -74,15 +74,15 @@ final List<Map> livros = [
 
 class Biblia extends StatelessWidget {
   const Biblia({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme:
-            IconThemeData(color: Theme.of(context).colorScheme.secondary),
+        centerTitle: false,
         title: Row(children: [
           TextButton(
-              onPressed: () {},
+              onPressed: (() {}),
               child: const Icon(
                 Icons.navigate_before,
                 color: Colors.grey,
@@ -92,7 +92,9 @@ class Biblia extends StatelessWidget {
             style: Theme.of(context).textTheme.headline3,
           )
         ]),
+        backgroundColor: Theme.of(context).colorScheme.background,
       ),
+      backgroundColor: Colors.black38,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -114,13 +116,14 @@ class Biblia extends StatelessWidget {
                     autofocus: true,
                     onPressed: () {},
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                          Theme.of(context).colorScheme.tertiary),
-                      foregroundColor: MaterialStateProperty.all(
-                          Theme.of(context).colorScheme.secondary),
+                      backgroundColor:
+                          MaterialStateProperty.all(Colors.transparent),
+                      overlayColor: MaterialStateProperty.all(Colors.grey[100]),
                       shape: MaterialStateProperty.all(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0),
+                          side: const BorderSide(
+                              width: 2.0, color: Colors.white30),
                         ),
                       ),
                     ),

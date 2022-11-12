@@ -4,7 +4,7 @@ class Tema {
   ThemeData get theme {
     return ThemeData(
       colorScheme: ThemeData.dark().colorScheme.copyWith(
-            primary: Colors.red,
+            primary: const Color.fromARGB(255, 255, 145, 0),
             secondary: Colors.white,
             tertiary: Colors.black,
           ),
