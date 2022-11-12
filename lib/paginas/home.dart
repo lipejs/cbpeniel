@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:carousel_slider/carousel_slider.dart';
 import '../componentes/menu.dart';
 
 final _listaImagem = [
@@ -83,9 +83,9 @@ class Home extends StatelessWidget {
                       const EdgeInsets.symmetric(vertical: 9, horizontal: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                    children: const [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           'Boa noite, Felipe!',
                           style: TextStyle(
@@ -97,9 +97,55 @@ class Home extends StatelessWidget {
                     ],
                   ),
                 ),
+                Container(
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 2, horizontal: 15),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: const [
+                            Text(
+                              'Versículo do dia',
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontFamily: 'Poppins',
+                              ),
+                            ),
+                          ],
+                        ),
+                        Text(
+                          'Cada um dê conforme determinou em seu coração, não com pesar ou por obrigação, pois Deus ama quem dá com alegria.',
+                          style: TextStyle(
+                              fontSize: 13,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.normal,
+                              backgroundColor: Colors.white,
+                              color: Colors.black),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              '2 Coríntios 9:7',
+                              style: TextStyle(
+                                fontSize: 13,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.normal,
+                                // backgroundColor: Colors.white,
+                                // color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(vertical: 2, horizontal: 15),
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: const [
@@ -113,12 +159,39 @@ class Home extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
-                  width: double.infinity,
-                  height: 200,
-                  child:
-                      Image.asset('lib\\imagem\\perfil.png', fit: BoxFit.cover),
-                ),
+                CarouselSlider(
+                    items: [
+                      Container(
+                        decoration: const BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              offset: Offset(0, -5),
+                              spreadRadius: 2,
+                              blurRadius: 8,
+                              color: Color.fromARGB(95, 255, 255, 255),
+                            ),
+                          ],
+                        ),
+                        child: Image.asset('lib\\imagem\\perfil.png',
+                            fit: BoxFit.cover),
+                      ),
+                      Container(
+                        decoration: const BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              offset: Offset(0, -5),
+                              spreadRadius: 2,
+                              blurRadius: 8,
+                              color: Color.fromARGB(95, 255, 255, 255),
+                            ),
+                          ],
+                        ),
+                        child: Image.asset('lib\\imagem\\perfil.png',
+                            fit: BoxFit.cover),
+                      ),
+                    ],
+                    options: CarouselOptions(
+                        enlargeCenterPage: true, aspectRatio: 2)),
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
