@@ -1,7 +1,6 @@
-import 'package:cbpeniel/componentes/livros.dart';
 import 'package:flutter/material.dart';
 
-import '../componentes/menu.dart';
+import '../componentes/pagina_biblia/livros.dart';
 
 final List<Map> livros = [
   {'sigla': 'Gn', 'nome': 'Genêsis'},

@@ -1,11 +1,11 @@
-import 'package:cbpeniel/componentes/Navegacao.dart';
 import 'package:cbpeniel/paginas/biblia.dart';
 import 'package:cbpeniel/paginas/galeria.dart';
 import 'package:cbpeniel/paginas/home.dart';
 import 'package:cbpeniel/paginas/youtube.dart';
 import 'package:flutter/material.dart';
 
-import 'componentes/tema.dart';
+import 'componentes/geral/navegacao.dart';
+import 'componentes/geral/tema.dart';
 import 'paginas/agenda.dart';
 
 void main() {
