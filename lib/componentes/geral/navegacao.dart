@@ -29,11 +29,11 @@ class Navegacao extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.smart_display_sharp),
-          label: 'YouTube',
+          label: 'Youtube',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.photo),
-          label: 'Galeria',
+          icon: Icon(Icons.event_note),
+          label: 'Eventos',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.menu),

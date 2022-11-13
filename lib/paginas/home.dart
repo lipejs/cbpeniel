@@ -61,19 +61,15 @@ class Home extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 9, horizontal: 15),
+                  padding: const EdgeInsets.symmetric(vertical: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
-                      Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          'Boa noite, Felipe!',
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontFamily: 'Great_Vibes',
-                          ),
+                      Text(
+                        'Boa noite, Felipe!',
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontFamily: 'Great_Vibes',
                         ),
                       ),
                     ],
@@ -81,7 +77,7 @@ class Home extends StatelessWidget {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(vertical: 2, horizontal: 15),
+                      const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
                   child: Column(
                     children: [
                       Row(
@@ -98,16 +94,9 @@ class Home extends StatelessWidget {
                           style: Theme.of(context).textTheme.headline4),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
-                        children: const [
-                          Text(
-                            '2 Coríntios 9:7',
-                            style: TextStyle(
-                              fontSize: 13,
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.normal,
-                              backgroundColor: Color.fromARGB(85, 0, 0, 0),
-                            ),
-                          ),
+                        children: [
+                          Text('2 Coríntios 9:7',
+                              style: Theme.of(context).textTheme.headline4),
                         ],
                       ),
                     ],
@@ -115,7 +104,7 @@ class Home extends StatelessWidget {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                      const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [

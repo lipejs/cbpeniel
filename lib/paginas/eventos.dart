@@ -1,8 +1,9 @@
-import 'package:cbpeniel/componentes/geral/voltar.dart';
 import 'package:flutter/material.dart';
 
-class Youtube extends StatelessWidget {
-  const Youtube({super.key, required this.pageController});
+import '../componentes/geral/voltar.dart';
+
+class Eventos extends StatelessWidget {
+  const Eventos({super.key, required this.pageController});
   final PageController pageController;
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class Youtube extends StatelessWidget {
         title: Row(children: [
           Voltar(pageController: pageController),
           Text(
-            'Culto Online / Videos',
+            'Eventos',
             style: Theme.of(context).textTheme.headline3,
           )
         ]),

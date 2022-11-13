@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../componentes/geral/voltar.dart';
 import '../componentes/pagina_biblia/livros.dart';
 
 final List<Map> livros = [
@@ -72,20 +73,16 @@ final List<Map> livros = [
 ];
 
 class Biblia extends StatelessWidget {
-  const Biblia({super.key});
+  const Biblia({super.key, required this.pageController});
 
+  final PageController pageController;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
         title: Row(children: [
-          TextButton(
-              onPressed: (() {}),
-              child: const Icon(
-                Icons.navigate_before,
-                color: Colors.grey,
-              )),
+          Voltar(pageController: pageController),
           Text(
             'Bíblia',
             style: Theme.of(context).textTheme.headline3,

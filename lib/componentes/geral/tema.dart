@@ -29,10 +29,11 @@ class Tema {
             ),
 
             headline4: const TextStyle(
-                fontFamily: 'OpenSans',
-                fontSize: 17,
-                backgroundColor: Color.fromARGB(85, 0, 0, 0),
-                color: Colors.white),
+              fontFamily: 'OpenSans',
+              fontSize: 17,
+              backgroundColor: Color.fromARGB(85, 0, 0, 0),
+              // color: Colors.white,
+            ),
           ),
     );
   }

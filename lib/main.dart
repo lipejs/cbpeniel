@@ -1,12 +1,12 @@
 import 'package:cbpeniel/paginas/biblia.dart';
-import 'package:cbpeniel/paginas/galeria.dart';
+import 'package:cbpeniel/paginas/eventos.dart';
 import 'package:cbpeniel/paginas/home.dart';
 import 'package:cbpeniel/paginas/youtube.dart';
 import 'package:flutter/material.dart';
 
 import 'componentes/geral/navegacao.dart';
 import 'componentes/geral/tema.dart';
-import 'paginas/agenda.dart';
+import 'paginas/menu.dart';
 
 void main() {
   runApp(const MyPage());
@@ -69,12 +69,12 @@ class _MyHomePageState extends State<MyHomePage> {
         physics: const NeverScrollableScrollPhysics(),
         onPageChanged: setPaginaAtual,
         controller: pc,
-        children: const [
+        children: [
           Home(),
-          Biblia(),
-          Youtube(),
-          Galeria(),
-          Agenda(),
+          Biblia(pageController: pc),
+          Youtube(pageController: pc),
+          Eventos(pageController: pc),
+          Menus(),
         ],
       ),
     );
