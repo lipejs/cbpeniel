@@ -70,11 +70,11 @@ class _MyHomePageState extends State<MyHomePage> {
         onPageChanged: setPaginaAtual,
         controller: pc,
         children: [
-          Home(),
+          const Home(),
           Biblia(pageController: pc),
           Youtube(pageController: pc),
           Eventos(pageController: pc),
-          Menus(),
+          const Menus(),
         ],
       ),
     );
